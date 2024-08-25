@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: login
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+  datasource:
+    password: ${DB_PASSWORD:root}
+    username: ${DB_USERNAME:root}
+    url: ${DB_CONNECTION_URL:jdbc:mysql://127.0.0.1:3308/loginDb?user=root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: ${SERVER_PORT:5000}
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
